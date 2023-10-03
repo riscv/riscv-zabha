@@ -10,7 +10,7 @@
 :colophon:
 :appendix-caption: Appendix
 :imagesdir: images
-:title-logo-image: image:risc-v_logo.svg[pdfwidth=3.25in,align=center]
+:title-logo-image: image:risc-v_logo.png[pdfwidth=3.25in,align=center]
 // Settings:
 :experimental:
 :reproducible:
@@ -72,16 +72,20 @@ instructions. For non-bitwise operations, emulation is acheivable using
 word-sized `LR`/`SC` instructions.
 
 Several limitations arise from this emulation approach:
+
 . In systems with large-scale or Non-Uniform Memory Access (NUMA)
   configurations, emulation based on `LR`/`SC` introduces issues related to
   scalability and fairness, particularly under conditions of high contention.
   Subword atomics, such as those employed in Linux kernel "qspinlocks," are not
   uncommon. Multiple programming languages and runtimes also make use of subword
   atomic operations.
+
 . Emulation of narrower AMOs through wider AMO* instructions on non-idempotent
   IO memory regions may result in unintended side effects.
+
 . Utilizing wider AMO* instructions for emulating narrower AMOs risks activating
   extraneous breakpoints or watchpoints.
+
 . In the absence of native support for subword atomics, compilers often resort
   to inlining code sequences to provide the required emulation. This inlining
   becomes necessary as numerous software packages may not link against atomic
