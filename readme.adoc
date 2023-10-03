@@ -1,7 +1,9 @@
-= RISC-V Atomic compare-and-swap (CAS) instructions
+= RISC-V Byte and Halfword Atomic Memory Operations (Zabha)
 
-The Zacas extension adds support for `amocas.w`, `amocas.d`, and `amocas.q`
-instructions to perform atomic Compare-and-Swap (CAS) operations.
+The Zabha extension supplements the A and Zacas extensions by introducing
+support for byte and halfword atomic memory operations. It designates byte
+and halfword as valid encodings for the width field in atomic memory
+operation instructions.
 
 = License
 
