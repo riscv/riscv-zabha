@@ -1,27 +1,25 @@
-= RISC-V Example Specification Document (Zexmpl)
-Authors: Author 1, Author 2
-:docgroup: RISC-V Task Group
-:description: RISC-V Example Specification Document (Zexmpl)
+[[header]]
+:description: Byte and Halfword Atomic Memory Operations
 :company: RISC-V.org
-:revdate: 1/2023
-:revnumber: 1.0
-:revremark: This document is under development. Expect potential changes. Visit http://riscv.org/spec-state for further details.
-:revinfo:
+:revdate: 6/2023
+:revnumber: 1.0-rc2
+:revremark: This document is in stable state. See http://riscv.org/spec-state for details.
 :url-riscv: http://riscv.org
 :doctype: book
 :preface-title: Preamble
 :colophon:
 :appendix-caption: Appendix
-:imagesdir: docs-resources/images
-:title-logo-image: image:risc-v_logo.png[pdfwidth=3.25in,align=center]
+:imagesdir: images
+:title-logo-image: image:risc-v_logo.svg[pdfwidth=3.25in,align=center]
 // Settings:
 :experimental:
 :reproducible:
+// needs to be changed? bug discussion started
 //:WaveDromEditorApp: app/wavedrom-editor.app
-:imagesoutdir: docs-resources/images
-:bibtex-file: example.bib
-:bibtex-order: alphabetical
-:bibtex-style: apa
+:imagesoutdir: images
+:bibtex-file: zabha.bib
+:bibtex-order: occurrence
+:bibtex-style: ieee
 :icons: font
 :lang: en
 :listing-caption: Listing
@@ -38,29 +36,62 @@ endif::[]
 :footnote:
 :xrefstyle: short
 
+= Byte and Halfword Atomic Memory Operations (Zabha)
+
+// Preamble
 [WARNING]
 .This document is in the link:http://riscv.org/spec-state[Development state]
 ====
-Expect potential changes. This draft specification is likely to evolve before
-it is accepted as a standard. Implementations based on this draft
-may not conform to the future standard.
+Assume anything could still change, but limited change should be expected.
+This draft specification will change before being accepted as standard, so
+implementations made to this draft specification will likely not conform to the
+future standard.
 ====
 
 [preface]
-== Copyright and license information
+=== Copyright and license information
 This specification is licensed under the Creative Commons
 Attribution 4.0 International License (CC-BY 4.0). The full
 license text is available at
 https://creativecommons.org/licenses/by/4.0/.
 
-Copyright 2022 by RISC-V International.
+Copyright 2023 by RISC-V International.
 
 [preface]
-include::contributors.adoc[]
+=== Contributors
+This RISC-V specification has been contributed to directly or indirectly by:
+Ved Shanbhogue
 
-include::intro.adoc[]
-include::chapter2.adoc[]
+== Introduction
 
-// The index must precede the bibliography
-include::index.adoc[]
-include::bibliography.adoc[]
+The A-extension offers atomic memory operation (AMO) instructions for words,
+doublewords, and quadwords (only for `amocas`). The absence of atomic operations
+for byte and halfword data types necessiates emulation strategies. For bitwise
+operations, this emulation can be performed via word-sized bitwise AMO*
+instructions. For non-bitwise operations, emulation is acheivable using
+word-sized `LR`/`SC` instructions.
+
+Several limitations arise from this emulation approach:
+. In systems with large-scale or Non-Uniform Memory Access (NUMA)
+  configurations, emulation based on `LR`/`SC` introduces issues related to
+  scalability and fairness, particularly under conditions of high contention.
+  Subword atomics, such as those employed in Linux kernel "qspinlocks," are not
+  uncommon. Multiple programming languages and runtimes also make use of subword
+  atomic operations.
+. Emulation of narrower AMOs through wider AMO* instructions on non-idempotent
+  IO memory regions may result in unintended side effects.
+. Utilizing wider AMO* instructions for emulating narrower AMOs risks activating
+  extraneous breakpoints or watchpoints.
+. In the absence of native support for subword atomics, compilers often resort
+  to inlining code sequences to provide the required emulation. This inlining
+  becomes necessary as numerous software packages may not link against atomic
+  libraries that offer such emulation. This practice contributes to an increase
+  in code size, with consequent impacts on system performance and memory
+  utilization.
+
+The Zabha extension aims to address these limitations by adding support for byte
+and halfword atomic memory operations to the RISC-V Unprivileged ISA.
+
+include::zabha.adoc[]
+//the index must precede the bibliography
+include::zabha_biblio.adoc[]

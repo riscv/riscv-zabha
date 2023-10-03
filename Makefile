@@ -19,7 +19,7 @@ DOCKER_RUN := docker run --rm -v ${PWD}:/build -w /build \
 riscvintl/riscv-docs-base-container-image:latest
 
 HEADER_SOURCE := header.adoc
-PDF_RESULT := spec-sample.pdf
+PDF_RESULT := riscv-zabha.pdf
 
 ASCIIDOCTOR_PDF := asciidoctor-pdf
 OPTIONS := --trace \
@@ -41,7 +41,7 @@ all: build
 
 build: 
 	@echo "Checking if Docker is available..."
-	@if command -v docker >/dev/null 2>&1 ; then \
+	@if command -v docker &> /dev/null ; then \
 		echo "Docker is available, building inside Docker container..."; \
 		$(MAKE) build-container; \
 	else \
