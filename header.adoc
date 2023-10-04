@@ -76,9 +76,6 @@ Several limitations arise from this emulation approach:
 . In systems with large-scale or Non-Uniform Memory Access (NUMA)
   configurations, emulation based on `LR`/`SC` introduces issues related to
   scalability and fairness, particularly under conditions of high contention.
-  Subword atomics, such as those employed in Linux kernel "qspinlocks," are not
-  uncommon. Multiple programming languages and runtimes also make use of subword
-  atomic operations.
 
 . Emulation of narrower AMOs through wider AMO* instructions on non-idempotent
   IO memory regions may result in unintended side effects.
@@ -87,11 +84,9 @@ Several limitations arise from this emulation approach:
   extraneous breakpoints or watchpoints.
 
 . In the absence of native support for subword atomics, compilers often resort
-  to inlining code sequences to provide the required emulation. This inlining
-  becomes necessary as numerous software packages may not link against atomic
-  libraries that offer such emulation. This practice contributes to an increase
-  in code size, with consequent impacts on system performance and memory
-  utilization.
+  to inlining code sequences to provide the required emulation. This practice
+  contributes to an increase in code size, with consequent impacts on system
+  performance and memory utilization.
 
 The Zabha extension aims to address these limitations by adding support for byte
 and halfword atomic memory operations to the RISC-V Unprivileged ISA

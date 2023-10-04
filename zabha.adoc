@@ -2,17 +2,30 @@
 == Byte and Halfward Atomic Memory Operations
 
 The Zabha extension supplements the A and Zacas extensions by introducing
-support for byte and halfword atomic memory operations. It designates byte (0)
-and halfword (1) as valid encodings for the width field in atomic memory
-operation instructions.
+support for byte and halfword atomic memory operations. It designates byte
+(`width=0`) and halfword (`width=1`) as valid encodings for the `width`
+field in atomic memory operation instructions.
+
+[wavedrom, , ] 
+.... 
+{reg: [
+  {bits:  7, name: 'opcode', attr:['AMO',`AMO`,'AMO',`AMO`,'AMO',`AMO`,'AMO',`AMO`]},
+  {bits:  5, name: 'rd',     attr:['dest',`dest`,'dest',`dest`,'dest',`dest`,'dest',`dest`]},
+  {bits:  3, name: 'funct3', attr:['width','width','width','width','width','width','width','width']},
+  {bits:  5, name: 'rs1',    attr:['addr','addr','addr','addr','addr','addr','addr','addr']},
+  {bits:  5, name: 'rs2',    attr:['src',`src`,'src',`src`,'src',`src`,'src',`src`]},
+  {bits:  1, name: 'rl'},
+  {bits:  1, name: 'aq'},
+  {bits:  5, name: 'funct5', attr:['AMOSWAP.B/H','AMOADD.D','AMOAND.Q','AMOOR.B/H','AMOXOR.D','AMOMAX[U].Q','AMOMIN[U].B/H','AMOCAS.B/H']},
+], config:{lanes: 1, hspace:1024}}
+....
 
 [NOTE]
 ====
 The Zabha extension specifically does not extend the `LR` and `SC` instructions
-to support byte and halfword encodings, as the marginal utility of such an
-inclusion is deemed limited.
+to support byte and halfword encodings due to its limited utility.
 ====
 
 For halfword AMOs, the `rs1` address must be aligned to a two-byte boundary.
 Failure to adhere to this alignment will trigger exceptions, in accordance with
-the exception-handling mechanisms defined by both the A and Zam extensions.
+the exception-handling mechanisms defined by both the A and the Zam extensions.
