@@ -11,11 +11,11 @@ field in atomic memory operation instructions.
 {reg: [
   {bits:  7, name: 'opcode', attr:['AMO','AMO','AMO','AMO','AMO','AMO','AMO','AMO']},
   {bits:  5, name: 'rd',     attr:['dest','dest','dest','dest','dest','dest','dest','dest']},
-  {bits:  3, name: 'funct3', attr:['width','width','width','width','width','width','width','width']},
+  {bits:  3, name: 'funct3', attr:['width=0/1','width=0/1','width=0/1','width=0/1','width=0/1','width=0/1','width=0/1','width=0/1']},
   {bits:  5, name: 'rs1',    attr:['addr','addr','addr','addr','addr','addr','addr','addr']},
   {bits:  5, name: 'rs2',    attr:['src','src','src','src','src','src','src','src']},
   {bits:  1, name: 'rl'},
-  {bits:  1, name: 'aq'},
+  {bits:  1, name: 'aq',     attr:['ordering','ordering','ordering','ordering','ordering','ordering','ordering','ordering']},
   {bits:  5, name: 'funct5', attr:['AMOSWAP.B/H','AMOADD.D','AMOAND.Q','AMOOR.B/H','AMOXOR.D','AMOMAX[U].Q','AMOMIN[U].B/H','AMOCAS.B/H']},
 ], config:{lanes: 1, hspace:1024}}
 ....
