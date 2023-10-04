@@ -1,10 +1,9 @@
 [[chapter2]]
-== Byte and Halfward Atomic Memory Operations
+== Byte and Halfword Atomic Memory Operations (Zabha)
 
-The Zabha extension supplements the A and Zacas extensions by introducing
-support for byte and halfword atomic memory operations. It designates byte
-(`width=0`) and halfword (`width=1`) as valid encodings for the `width`
-field in atomic memory operation instructions.
+Zabha extends A and Zacas standard extensions by adding _byte_ (`width=0`) and
+_halfword_ (`width=1`) support in `width` field for atomic memory operation
+instructions.
 
 [wavedrom, , ] 
 .... 
@@ -22,10 +21,5 @@ field in atomic memory operation instructions.
 
 [NOTE]
 ====
-The Zabha extension specifically does not extend the `LR` and `SC` instructions
-to support byte and halfword encodings due to its limited utility.
+Zabha omits _byte_ and _halfword_ support for `LR` and `SC` due to low utility.
 ====
-
-For halfword AMOs, the `rs1` address must be aligned to a two-byte boundary.
-Failure to adhere to this alignment will trigger exceptions, in accordance with
-the exception-handling mechanisms defined by both the A and the Zam extensions.

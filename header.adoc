@@ -1,5 +1,5 @@
 [[header]]
-:description: Byte and Halfword Atomic Memory Operations
+:description: Byte and Halfword Atomic Memory Operations (Zabha)
 :company: RISC-V.org
 :revdate: 6/2023
 :revnumber: 1.0-rc2
@@ -64,11 +64,11 @@ Ved Shanbhogue
 
 == Introduction
 
-The A-extension offers atomic memory operation (AMO) instructions for words,
-doublewords, and quadwords (only for `amocas`). The absence of atomic operations
-for byte and halfword data types necessiates emulation strategies. For bitwise
+The A-extension offers atomic memory operation (AMO) instructions for _words_,
+_doublewords_, and _quadwords_ (only for `amocas`). The absence of atomic
+operations for subword data types necessitates emulation strategies. For bitwise
 operations, this emulation can be performed via word-sized bitwise AMO*
-instructions. For non-bitwise operations, emulation is acheivable using
+instructions. For non-bitwise operations, emulation is achievable using
 word-sized `LR`/`SC` instructions.
 
 Several limitations arise from this emulation approach:
@@ -88,10 +88,10 @@ Several limitations arise from this emulation approach:
   contributes to an increase in code size, with consequent impacts on system
   performance and memory utilization.
 
-The Zabha extension aims to address these limitations by adding support for byte
-and halfword atomic memory operations to the RISC-V Unprivileged ISA
-cite:[unpriv]. The Zacas extension depends upon the A extension and the Zacas
-standard extension cite:[zacas].
+The Zabha extension aims to address these limitations by adding support for _byte_
+and _halfword_ atomic memory operations to the RISC-V Unprivileged ISA
+cite:[unpriv]. The Zabha extension depends upon the A and the Zacas cite:[zacas]
+standard extensions.
 
 include::zabha.adoc[]
 //the index must precede the bibliography
