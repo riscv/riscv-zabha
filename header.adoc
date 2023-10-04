@@ -90,8 +90,7 @@ Several limitations arise from this emulation approach:
 
 The Zabha extension aims to address these limitations by adding support for _byte_
 and _halfword_ atomic memory operations to the RISC-V Unprivileged ISA
-cite:[unpriv]. The Zabha extension depends upon the A and the Zacas cite:[zacas]
-standard extensions.
+cite:[unpriv]. The Zabha extension depends upon the A standard extension.
 
 include::zabha.adoc[]
 //the index must precede the bibliography
