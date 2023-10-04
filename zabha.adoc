@@ -16,7 +16,7 @@ field in atomic memory operation instructions.
   {bits:  5, name: 'rs2',    attr:['src','src','src','src','src','src','src','src']},
   {bits:  1, name: 'rl'},
   {bits:  1, name: 'aq',     attr:['ordering','ordering','ordering','ordering','ordering','ordering','ordering','ordering']},
-  {bits:  5, name: 'funct5', attr:['AMOSWAP.B/H','AMOADD.D','AMOAND.Q','AMOOR.B/H','AMOXOR.D','AMOMAX[U].Q','AMOMIN[U].B/H','AMOCAS.B/H']},
+  {bits:  5, name: 'funct5', attr:['AMOSWAP.B/H','AMOADD.B/H','AMOAND.B/H','AMOOR.B/H','AMOXOR.B/H','AMOMAX[U].B/H','AMOMIN[U].B/H','AMOCAS.B/H']},
 ], config:{lanes: 1, hspace:1024}}
 ....
 
