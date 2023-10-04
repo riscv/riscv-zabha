@@ -9,11 +9,11 @@ field in atomic memory operation instructions.
 [wavedrom, , ] 
 .... 
 {reg: [
-  {bits:  7, name: 'opcode', attr:['AMO',`AMO`,'AMO',`AMO`,'AMO',`AMO`,'AMO',`AMO`]},
-  {bits:  5, name: 'rd',     attr:['dest',`dest`,'dest',`dest`,'dest',`dest`,'dest',`dest`]},
+  {bits:  7, name: 'opcode', attr:['AMO','AMO','AMO','AMO','AMO','AMO','AMO','AMO']},
+  {bits:  5, name: 'rd',     attr:['dest','dest','dest','dest','dest','dest','dest','dest']},
   {bits:  3, name: 'funct3', attr:['width','width','width','width','width','width','width','width']},
   {bits:  5, name: 'rs1',    attr:['addr','addr','addr','addr','addr','addr','addr','addr']},
-  {bits:  5, name: 'rs2',    attr:['src',`src`,'src',`src`,'src',`src`,'src',`src`]},
+  {bits:  5, name: 'rs2',    attr:['src','src','src','src','src','src','src','src']},
   {bits:  1, name: 'rl'},
   {bits:  1, name: 'aq'},
   {bits:  5, name: 'funct5', attr:['AMOSWAP.B/H','AMOADD.D','AMOAND.Q','AMOOR.B/H','AMOXOR.D','AMOMAX[U].Q','AMOMIN[U].B/H','AMOCAS.B/H']},
