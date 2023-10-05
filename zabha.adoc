@@ -19,10 +19,10 @@ memory operation instructions.
 ], config:{lanes: 1, hspace:1024}}
 ....
 
-Just as for AMOs in the A extension, Zabha requires that the address held in
-`rs1` be naturally aligned to the size of the operand. And the same exception
-options apply if the address is not naturally aligned.
-
+Similar to the AMOs specified in the A extension, the Zabha extension mandates
+that the address contained in the `rs1` register must be naturally aligned to
+the size of the operand. The same exception options as specified in the A
+extension are applicable in cases where the address is not naturally aligned.
 
 [NOTE]
 ====
