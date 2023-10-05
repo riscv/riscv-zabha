@@ -19,6 +19,11 @@ memory operation instructions.
 ], config:{lanes: 1, hspace:1024}}
 ....
 
+Just as for AMOs in the A extension, Zabha requires that the address held in
+`rs1` be naturally aligned to the size of the operand. And the same exception
+options apply if the address is not naturally aligned.
+
+
 [NOTE]
 ====
 Zabha omits _byte_ and _halfword_ support for `LR` and `SC` due to low utility.
