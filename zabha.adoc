@@ -3,7 +3,9 @@
 
 Zabha extends A and Zacas cite:[zacas] standard extensions by adding _byte_
 (`width=0`) and _halfword_ (`width=1`) support in `width` field for atomic
-memory operation instructions.
+memory operation instructions. Byte and halfword AMOs always sign-extend the
+value placed in `rd`, and ignore the `XLEN-1:width` bits of the original value
+in `rs2`.
 
 [wavedrom, , ] 
 .... 
