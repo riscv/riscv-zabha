@@ -3,9 +3,10 @@
 
 Zabha extends A and Zacas cite:[zacas] standard extensions by adding _byte_
 (`width=0`) and _halfword_ (`width=1`) support in `width` field for atomic
-memory operation instructions. Byte and halfword AMOs always sign-extend the
-value placed in `rd`, and ignore the `XLEN-1:(2^(width + 3))` bits of the
-original value in `rs2`.
+memory operation instructions. 
+
+Zabha provides `AMO[ADD|AND|OR|XOR|SWAP|MIN[U]|MAX[U]].[B|H]`. If Zacas is also
+implemented, Zabha further provides `AMOCAS.[B|H]`.
 
 [wavedrom, , ] 
 .... 
@@ -20,6 +21,9 @@ original value in `rs2`.
   {bits:  5, name: 'funct5', attr:['AMOSWAP.B/H','AMOADD.B/H','AMOAND.B/H','AMOOR.B/H','AMOXOR.B/H','AMOMAX[U].B/H','AMOMIN[U].B/H','AMOCAS.B/H']},
 ], config:{lanes: 1, hspace:1024}}
 ....
+
+Byte and halfword AMOs always sign-extend the value placed in `rd`, and
+ignore the `XLEN-1:(2^(width + 3))` bits of the original value in `rs2`.
 
 Similar to the AMOs specified in the A extension, the Zabha extension mandates
 that the address contained in the `rs1` register must be naturally aligned to
