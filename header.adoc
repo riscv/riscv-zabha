@@ -1,8 +1,8 @@
 [[header]]
 :description: Byte and Halfword Atomic Memory Operations (Zabha)
 :company: RISC-V.org
-:revdate: 6/2023
-:revnumber: 1.0-rc2
+:revdate: 10/2023
+:revnumber: 0.9
 :revremark: This document is in stable state. See http://riscv.org/spec-state for details.
 :url-riscv: http://riscv.org
 :doctype: book
@@ -40,7 +40,7 @@ endif::[]
 
 // Preamble
 [WARNING]
-.This document is in the link:http://riscv.org/spec-state[Development state]
+.This document is in the link:http://riscv.org/spec-state[Stable state]
 ====
 Assume anything could still change, but limited change should be expected.
 This draft specification will change before being accepted as standard, so
