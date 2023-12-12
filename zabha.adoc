@@ -8,7 +8,7 @@ memory operation instructions.
 Zabha provides `AMO[ADD|AND|OR|XOR|SWAP|MIN[U]|MAX[U]].[B|H]`. If Zacas is also
 implemented, Zabha further provides `AMOCAS.[B|H]`.
 
-[wavedrom, , ] 
+[wavedrom, ,svg] 
 .... 
 {reg: [
   {bits:  7, name: 'opcode', attr:['AMO','AMO','AMO','AMO','AMO','AMO','AMO','AMO']},
