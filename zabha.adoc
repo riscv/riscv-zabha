@@ -1,12 +1,9 @@
 [[chapter2]]
 == Byte and Halfword Atomic Memory Operations (Zabha)
 
-Zabha extends Zaamo and Zacas cite:[zacas] standard extensions by adding _byte_
-(`width=0`) and _halfword_ (`width=1`) support in `width` field for atomic
-memory operation instructions. 
-
-Zabha provides `AMO[ADD|AND|OR|XOR|SWAP|MIN[U]|MAX[U]].[B|H]`. If Zacas is also
-implemented, Zabha further provides `AMOCAS.[B|H]`.
+Zabha extension provides the `AMO[ADD|AND|OR|XOR|SWAP|MIN[U]|MAX[U]].[B|H]`
+instructions.  If Zacas cite:[zacas] extension is also implemented, Zabha
+further provides the `AMOCAS.[B|H]` instructions.
 
 [wavedrom, ,svg] 
 .... 
