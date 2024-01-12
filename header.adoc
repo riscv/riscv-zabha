@@ -1,8 +1,8 @@
 [[header]]
 :description: Byte and Halfword Atomic Memory Operations (Zabha)
 :company: RISC-V.org
-:revdate: 10/2023
-:revnumber: 0.9.1
+:revdate: 1/2024
+:revnumber: 1.0
 :revremark: This document is in stable state. See http://riscv.org/spec-state for details.
 :url-riscv: http://riscv.org
 :doctype: book
@@ -60,7 +60,7 @@ Copyright 2023 by RISC-V International.
 [preface]
 === Contributors
 This RISC-V specification has been contributed to directly or indirectly by:
-Ved Shanbhogue
+Ved Shanbhogue, Andrew Waterman, Gianluca Guida
 
 == Introduction
 
