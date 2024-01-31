@@ -3,7 +3,7 @@
 :company: RISC-V.org
 :revdate: 1/2024
 :revnumber: 1.0
-:revremark: This document is in stable state. See http://riscv.org/spec-state for details.
+:revremark: This document is in Frozen state. See http://riscv.org/spec-state for details.
 :url-riscv: http://riscv.org
 :doctype: book
 :preface-title: Preamble
@@ -40,12 +40,14 @@ endif::[]
 
 // Preamble
 [WARNING]
-.This document is in the link:http://riscv.org/spec-state[Stable state]
+.This document is in the link:http://riscv.org/spec-state[Frozen state]
 ====
-Assume anything could still change, but limited change should be expected.
-This draft specification will change before being accepted as standard, so
-implementations made to this draft specification will likely not conform to the
-future standard.
+Change is extremely unlikely. A high threshold will be used, and a change will
+only occur because of some truly critical issue being identified during the
+public review cycle. Any other desired or needed changes can be the subject of a
+follow-on new extension. This draft specification will change before being
+accepted as standard, so implementations made to this draft specification will
+likely not conform to the future standard.
 ====
 
 [preface]
@@ -55,7 +57,7 @@ Attribution 4.0 International License (CC-BY 4.0). The full
 license text is available at
 https://creativecommons.org/licenses/by/4.0/.
 
-Copyright 2023 by RISC-V International.
+Copyright 2024 by RISC-V International.
 
 [preface]
 === Contributors
@@ -90,7 +92,7 @@ Several limitations arise from this emulation approach:
 
 The Zabha extension aims to address these limitations by adding support for _byte_
 and _halfword_ atomic memory operations to the RISC-V Unprivileged ISA
-cite:[unpriv]. The Zabha extension depends upon the A standard extension.
+cite:[unpriv]. The Zabha extension depends upon the Zaamo standard extension.
 
 include::zabha.adoc[]
 //the index must precede the bibliography
