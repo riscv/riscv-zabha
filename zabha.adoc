@@ -21,6 +21,8 @@ further provides the `AMOCAS.[B|H]` instructions.
 
 Byte and halfword AMOs always sign-extend the value placed in `rd`, and
 ignore the `XLEN-1:(2^(width + 3))` bits of the original value in `rs2`.
+The `AMOCAS.[B|H]` instructions similarly ignore the `XLEN-1:(2^(width + 3))`
+bits of the original value in `rd`.
 
 Similar to the AMOs specified in the A extension, the Zabha extension mandates
 that the address contained in the `rs1` register must be naturally aligned to
