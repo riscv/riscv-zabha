@@ -5,8 +5,8 @@ Zabha extension provides the `AMO[ADD|AND|OR|XOR|SWAP|MIN[U]|MAX[U]].[B|H]`
 instructions.  If Zacas cite:[zacas] extension is also implemented, Zabha
 further provides the `AMOCAS.[B|H]` instructions.
 
-[wavedrom, ,svg] 
-.... 
+[wavedrom, zabha-ext-wavedrom-reg,svg]
+....
 {reg: [
   {bits:  7, name: 'opcode', attr:['AMO','AMO','AMO','AMO','AMO','AMO','AMO','AMO']},
   {bits:  5, name: 'rd',     attr:['dest','dest','dest','dest','dest','dest','dest','dest']},
