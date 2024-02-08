@@ -29,6 +29,10 @@ that the address contained in the `rs1` register must be naturally aligned to
 the size of the operand. The same exception options as specified in the A
 extension are applicable in cases where the address is not naturally aligned.
 
+Similar to the AMOs specified in the A and Zacas extensions, the AMOs in the
+Zabha extension optionally provide release consistency semantics, using the `aq`
+and `rl` bits, to help implement multiprocessor synchronization.
+
 [NOTE]
 ====
 Zabha omits _byte_ and _halfword_ support for `LR` and `SC` due to low utility.
