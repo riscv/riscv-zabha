@@ -15,8 +15,9 @@ on:
         type: choice
         options:
           - Draft
-          - Release
+          - Ratified
           - Stable
+          - Frozen
         default: Draft
       prerelease:
         description: Tag as a pre-release?
