@@ -62,7 +62,7 @@ Copyright 2024 by RISC-V International.
 [preface]
 === Contributors
 This RISC-V specification has been contributed to directly or indirectly by:
-Ved Shanbhogue, Andrew Waterman, Gianluca Guida
+Ved Shanbhogue, Andrew Waterman, Gianluca Guida, Hans Boehm
 
 == Introduction
 
