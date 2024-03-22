@@ -1,4 +1,4 @@
-[[header]]
+= Byte and Halfword Atomic Memory Operations (Zabha)
 :description: Byte and Halfword Atomic Memory Operations (Zabha)
 :company: RISC-V.org
 :revdate: 1/2024
@@ -35,9 +35,9 @@ endif::[]
 :footnote:
 :xrefstyle: short
 
-= Byte and Halfword Atomic Memory Operations (Zabha)
+[preface]
+== Preamble
 
-// Preamble
 [WARNING]
 .This document is in the link:http://riscv.org/spec-state[Frozen state]
 ====
@@ -49,7 +49,6 @@ accepted as standard, so implementations made to this draft specification will
 likely not conform to the future standard.
 ====
 
-[preface]
 === Copyright and license information
 
 This specification is licensed under the Creative Commons
@@ -59,7 +58,6 @@ https://creativecommons.org/licenses/by/4.0/.
 
 Copyright 2024 by RISC-V International.
 
-[preface]
 === Contributors
 
 This RISC-V specification has been contributed to directly or indirectly by:
